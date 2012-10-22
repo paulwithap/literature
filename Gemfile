@@ -23,11 +23,10 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-  gem 'turn'
-  gem 'minitest' # required for turn
   gem 'rspec-rails'
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'rb-fsevent'
 end
 
 # To use ActiveModel has_secure_password
