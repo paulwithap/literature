@@ -1,1 +1,27 @@
 <h1>Welcome to Literature!</h1>
+
+<div>
+  <%= puts @user %>
+</div>
+<% if @user %>
+  <h2>Hi <%= @user.username %></h2>
+  <div>Users waiting:</div>
+  <ul id="users">
+    <% for u in User.all %>
+      <li><%= u.username %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h2>Please login</h2>
+  <%= form_tag root_path do %>
+    <div>
+      <%= label_tag :username %>
+      <%= text_field_tag :username, params[:username] %>
+    </div>
+    <div>
+      <%= label_tag :passord %>
+      <%= password_field_tag :password, params[:password] %>
+    </div>
+    <div class="button"><%= submit_tag %></div>
+  <% end %>
+<% end %>
